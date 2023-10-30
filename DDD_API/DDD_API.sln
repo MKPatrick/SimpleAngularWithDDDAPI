@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDD_API", "DDD_API\DDD_API.csproj", "{00A986F1-7753-415B-A8E2-EF9519FEED4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{704A5995-B801-4B9B-9DD7-CFF38CA5F73C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{22ADC87E-5002-45E1-8ED9-407B4A8C83C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00A986F1-7753-415B-A8E2-EF9519FEED4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00A986F1-7753-415B-A8E2-EF9519FEED4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00A986F1-7753-415B-A8E2-EF9519FEED4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00A986F1-7753-415B-A8E2-EF9519FEED4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{704A5995-B801-4B9B-9DD7-CFF38CA5F73C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{704A5995-B801-4B9B-9DD7-CFF38CA5F73C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{704A5995-B801-4B9B-9DD7-CFF38CA5F73C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{704A5995-B801-4B9B-9DD7-CFF38CA5F73C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22ADC87E-5002-45E1-8ED9-407B4A8C83C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22ADC87E-5002-45E1-8ED9-407B4A8C83C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22ADC87E-5002-45E1-8ED9-407B4A8C83C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22ADC87E-5002-45E1-8ED9-407B4A8C83C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B39C5FC-D808-4029-A661-9DCD85CE9650}
+	EndGlobalSection
+EndGlobal
