@@ -33,11 +33,13 @@ namespace DDD_API.Services
 			return result;
 		}
 
-		public async Task AddDepartment(AddDepartmentRequest addEmployeeRequest)
+		public async Task<AddDepartmentResponse> AddDepartment(AddDepartmentRequest addEmployeeRequest)
 		{
 			var entity = mapper.Map<Department>(addEmployeeRequest);
 			await departmentRepository.AddAsync(entity);
 			await unitOfWork.SaveChangesAsync();
+			var result = mapper.Map<Department, AddDepartmentResponse>(entity);
+			return result;
 		}
 
 		public async Task UpdateDepartment(UpdateDepartmentRequest updateDepartment)

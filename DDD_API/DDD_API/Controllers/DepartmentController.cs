@@ -36,7 +36,7 @@ namespace DDD_API.Controllers
 				var responseError = BaseResponseFactory.Create();
 				responseError.Message = "Error by Fetching";
 				Logger.Error(ex);
-				return BadRequest(responseError);
+				return StatusCode(500, responseError);
 			}
 		}
 
@@ -57,7 +57,7 @@ namespace DDD_API.Controllers
 				var responseError = BaseResponseFactory.Create();
 				responseError.Message = "Error by Updating department";
 				Logger.Error(ex);
-				return BadRequest(responseError);
+				return StatusCode(500, responseError);
 			}
 		}
 
@@ -66,8 +66,8 @@ namespace DDD_API.Controllers
 		{
 			try
 			{
-				await departmentService.AddDepartment(addDepartment);
-				var response = BaseResponseFactory.Create();
+				var createdDepartment = await departmentService.AddDepartment(addDepartment);
+				var response = BaseResponseFactory.Create(createdDepartment);
 				response.Message = "Add department successfull";
 
 				return Ok(response);
@@ -78,7 +78,7 @@ namespace DDD_API.Controllers
 				var responseError = BaseResponseFactory.Create();
 				responseError.Message = "Error by Add department";
 				Logger.Error(ex);
-				return BadRequest(responseError);
+				return StatusCode(500, responseError);
 			}
 		}
 
@@ -89,6 +89,12 @@ namespace DDD_API.Controllers
 			try
 			{
 				var entity = await departmentService.GetDepartmentById(userID);
+				if (entity == null)
+				{
+					var responseNotFound = BaseResponseFactory.Create();
+					responseNotFound.Message = "Department Not Found";
+					return NotFound(responseNotFound);
+				}
 				var response = BaseResponseFactory.Create(entity);
 				response.Message = "Get Department successfull";
 				return Ok(response);
@@ -99,7 +105,7 @@ namespace DDD_API.Controllers
 				var responseError = BaseResponseFactory.Create();
 				responseError.Message = "Error by Getting Department";
 				Logger.Error(ex);
-				return BadRequest(responseError);
+				return StatusCode(500, responseError);
 			}
 		}
 
@@ -120,7 +126,7 @@ namespace DDD_API.Controllers
 				var responseError = BaseResponseFactory.Create();
 				responseError.Message = "Error by deleting Department";
 				Logger.Error(ex);
-				return BadRequest(responseError);
+				return StatusCode(500, responseError);
 			}
 		}
 	}
