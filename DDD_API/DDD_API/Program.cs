@@ -57,6 +57,7 @@ builder.Services.AddTransient<IDepartmentService, DepartmentService>();
 
 //Validators
 builder.Services.AddScoped<IValidator<AddEmployeeRequest>, AddEmployeeValidation>();
+builder.Services.AddScoped<IValidator<UpdateEmployeeRequest>, UpdateEmployeeValidation>();
 
 builder.Services.AddFluentValidationAutoValidation();
 
